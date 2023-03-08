@@ -1,0 +1,27 @@
+/*
+Theme Name:     NB Learn
+Theme URI:      https://learn.trainingdoulas.com/
+Description:    NB Learn is an extension of the Kadence theme by Kadence WP
+Author:         Brent Leavitt
+Author URI:     https://www.trainingdoulas.com/
+Template:       kadence
+Version:        0.1.0
+*/
+
+@import url("../kadence/style.css");
+
+.entry-hero.page-hero-section .entry-header{
+	background: green;
+	
+}
+
+.rcp_form .rcp_user_fieldset label{
+	background: red;
+}
+
+.rcp_form .rcp_user_fieldset label span{
+	display: block;	
+	font-weight: normal;
+	line-height: .8em;	
+}
+
