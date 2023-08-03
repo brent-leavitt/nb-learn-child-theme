@@ -4,12 +4,11 @@ global $pinnacle; ?>
 <footer class="footerclass">
 
 	<div class="container" id="ftr_social">
-	
-		<h3><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/cbl_logo_white.png" alt="New Beginnings Childbirth Library" width="400px" height="76px" /></h3>
+		<h3><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/NBCS_white.png" alt="New Beginnings Childbirth Services" width="400px" height="76px" /></h3>
 		<p>Follow New Beginnings on social media for<br/>great birth tips and inspiration.</p>
 		<?php if (is_active_sidebar('ftr_social') ) { ?> 
 			<div class="ftr_social">
-			<?php dynamic_sidebar('ftr_social'); ?>
+				<?php dynamic_sidebar('ftr_social'); ?>
 			</div> 
 		<?php }; ?>
 	</div>
@@ -43,7 +42,6 @@ global $pinnacle; ?>
         		$footerstring = str_replace('[copyright]','&copy;',$footerstring);
         		$footerstring = str_replace('[the-year]',date('Y'),$footerstring);
         		$footerstring = str_replace('[site-name]',get_bloginfo('name'),$footerstring);
-        		$footerstring = str_replace('[theme-credit]','- WordPress Theme by <a href="http://www.kadencethemes.com/" target="_blank">Kadence Themes</a>',$footerstring);
         		echo '<p>'. do_shortcode($footerstring).'</p>';} ?>
     	</div><!-- credits -->
     </div><!-- container -->
