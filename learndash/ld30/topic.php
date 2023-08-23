@@ -186,11 +186,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<p><a class="button" href="#asmt-editor">Jump to Assignment Editor &darr;</a></p>
 						<hr style="clear: both;">
-						<h2 id="asmt-editor">Assignment Editor</h2>
-						<?php // We may want to insert comments on the assignment here? Toggle Visibility. ?>
+						<div class="asmt-editor"> 
+							<h2 id="asmt-editor">Assignment Editor</h2>
+							<?php // We may want to insert comments on the assignment here? Toggle Visibility. ?>
 
-						<?php  include_once( DOULA_COURSE_PATH.'app/tmpl/assignment-editor.php' );
+							<?php  include_once( DOULA_COURSE_PATH.'app/tmpl/assignment-editor.php' ); ?>
+							
+						</div><!-- end asmt-editor --> 		
 
+						<?php 
 						// Restore original Post Data //
 						 wp_reset_postdata();
 

@@ -31,8 +31,6 @@ Version:        0.1.0
 	- Plugin Speicifics: 
 	
 
-		- Restricted Content Pro - Forms, General
-
 		- Childbirth Library - General Layouts
 		- Childbirth Library - Category Page
 		- Childbirth Library - Content (General)
@@ -65,6 +63,11 @@ Version:        0.1.0
 			- screen and (max-width: 991px)
 			- screen and (max-width: 650px)
 
+
+	
+
+	- Restricted Content Pro - Forms, General
+
  */
 
 
@@ -87,10 +90,10 @@ Version:        0.1.0
 }
 
 hr {
-    background: none repeat scroll 0 0 #dddddd;
+    background: none repeat scroll 0 0 var( --nb-learn--light-gray);
     border: medium none;
     clear: both;
-	border-color: #dedede !important;
+	border-color: var( --nb-learn--light-gray) !important;
     float: none;
     height: 1px;
     width: 100%;
@@ -178,7 +181,7 @@ iframe{
 	.kad-header-style-basic #nav-main .sf-menu li.menu-login a,
 	.kad-header-style-basic #nav-main .sf-menu li.menu-account > a{
 		border: 2px solid var( --nb-learn--light-yellow);
-		color: #f2b80f;
+		color: var( --nb-learn--yellow);
 		line-height: 2.3em;
 		margin: 30px 10px 30px 0;
 	}
@@ -188,7 +191,7 @@ iframe{
 	}
 
 	.kad-header-style-basic #nav-main .sf-menu li.menu-register a{
-		background-color: #9EBB09;
+		background-color: var( --nb-learn--green);
 		color: var( --nb-learn--white);
 		margin: 30px 0;
 		line-height: 2.5em !important;
@@ -203,7 +206,7 @@ iframe{
 	}
 
 	.sf-menu ul li.menu-log-out{
-		background: #122128; 
+		background: var( --nb-learn--black);
 	}
 
 
@@ -229,12 +232,96 @@ iframe{
 
 
 	/* || Sidebar Widgets */
+
+	.sidebar{
+		background: url("img/welcome-boquet.png") no-repeat right 50px var( --nb-learn--white );
+		padding: 10px 24px; 
+		margin: 20px 0;  
+	}
+
+	.sidebar h2{
+		color: var( --nb-learn--gray );
+
+	}
 	
+	.sidebar .widget-first{
+		margin-top: 10px;
+
+	}
+
+	.sidebar .form-search .search-query{
+		background: rgba(252, 251, 255, .5);
+	}
+
+
+
+	.textwidget p{
+		color: var( --nb-learn--gray );
+	}
+
 	.textwidget p img{
 		display: block;
 		margin: 0 auto;
 	}
 
+	aside.col-lg-3.col-md-4{
+		padding: 0; 
+	}
+
+	.widget p.small{
+		font-size: .8em; 
+		line-height: 1.1em;
+		color: var( --nb-learn--gray);
+	}
+
+	.widget h2.need-help{
+		background-image: url("img/pink-stick.png") ;
+		background-repeat: no-repeat;
+		padding-top: 60px;  
+		padding-bottom: 30px;
+		margin-bottom: -30px;
+		background-position: bottom right;
+	}
+
+	#check-in-widget h2{
+		/* background-image: url("img/ct_tile_bg_other.png") ; */
+		background-repeat: no-repeat;
+		background-position: bottom right;
+	}
+
+	#check-in-widget span {
+		font-size: 1.2em;
+		color: var( --nb-learn--dark-gray);
+	}
+
+	aside .logged-in a{
+		background-color: var( --nb-learn--light-gray );
+		border-radius: 4px; 
+		color: var( --nb-learn--white );
+		padding: 10px;
+		transition: all .2s linear;
+	}
+
+	aside .logged-in a:hover,
+	aside .logged-in a:active,
+	aside .logged-in a:focus{
+		background-color: var( --nb-learn--gray); 
+	}
+
+	aside .logged-in a::after{
+		content: " ⇥";
+		font-weight: bold;
+		line-height: 0; 
+		margin: 0; 
+	}
+
+	aside p.profile-widget span{
+		font-size: 3em;
+	}
+
+	aside p.profile-widget a span{
+		color: var( --nb-learn--green ); 
+	}
 
 	/* ! Sidebar Widgets */ 
 
@@ -250,7 +337,7 @@ iframe{
 	}
 	
 	.pre_footer a.feature_cta{
-		background: #9EBB09;
+		background: var( --nb-learn--green);
 	}
 	
 	.pre_footer a.secondary_cta{
@@ -275,7 +362,7 @@ iframe{
 	
 	#ftr_social li a{
 		padding: 10px;
-		color: #9EBB09;
+		color: var( --nb-learn--green);
 	}
 	
 	#ftr_social li a.genericon{
@@ -310,8 +397,8 @@ iframe{
 	}
 	
 	.footer-widget h4{
-		color: #F3B710;
-		border-bottom: 1px solid #8B8B8B;
+		color: var( --nb-learn--yellow);
+		border-bottom: 1px solid var( --nb-learn--gray );
 		text-align: center;
 		padding-bottom: 10px;
 		
@@ -336,7 +423,37 @@ iframe{
 
 /* || SECTIONS */
 
+	.page .entry-content > div{
+		padding: 20px;
+		background-color: var( --nb-learn--white);
+		border: var( --nb-learn--light-gray ) 1px solid;
+		margin-bottom: 40px; 
+	}
+
 	/* || Home Page */
+
+	.home .main h1{
+		margin: 40px  0 0 0;
+		padding: 25px 20px 30px;
+		background: var( --nb-learn--white );
+	}
+
+	.home .main h1.kad-call-title{
+		margin: 10px 0; 
+		padding: 0; 
+		background: none; 
+	}
+
+	.home_calltoaction .kt-home-call-to-action{
+		background-position: 90% top;
+	}
+
+	.home .main .section{
+
+		background: var( --nb-learn--white );
+		padding-bottom: 20px; 
+		margin-bottom: 20px;
+	}
 
 	a#home-page-subtitle-cta{
 		display: block;
@@ -344,7 +461,7 @@ iframe{
 		width: 212px;
 		padding: 13px 0;
 		font-size: 20px;
-		background-color: #9EBB09;
+		background-color: var( --nb-learn--green);
 	}
 	
 	.home_subsection{
@@ -356,7 +473,7 @@ iframe{
 	
 	.home_subsection p{
 		font-size: 16px; 
-		color: #8B8B8B;
+		color: var( --nb-learn--gray );
 	}
 	
 	
@@ -407,7 +524,10 @@ iframe{
 
 		/* || User Profile */
 		
+		.rcp_form input.rcp-button#rcp_profile_editor_submit{
+			margin: 10px 0 20px;
 
+		}
 
 		/* ! Uesr Profile */ 
 
@@ -427,14 +547,36 @@ iframe{
 
 	/* || Login */
 	
+	#rcp_login_form{
+		background-image: url( "img/login-boquet.png" ); 
+		background-position: 89% 110%;
+		background-repeat: no-repeat; 
+	}
 
+	@media screen and (max-width: 1200px) and (min-width: 992px){
+		#rcp_login_form{
+			background-position: 80% 90%; 
+		}
+
+	}
+
+	@media screen and (max-width: 691px){
+		#rcp_login_form{
+			background-position: 80% 90%; 
+		}
+
+	}
 
 	/* ! Login */ 
 
 
 	/* || Registration */
 	
-
+	.rcp_form fieldset.rcp_subscription_fieldset label span{
+		display: inline;
+		font-size: 1em;
+		line-height: 1em;
+	}
 
 	/* ! Registration */ 
 
@@ -472,7 +614,7 @@ iframe{
 			  z-index: 10; 
 			  background: var( --nb-learn--gray);
 			  color: var( --nb-learn--white);
-			  margin-top: -60px;
+			  margin-top: -34px;
 			  padding: 5px 10px;
 			  
 		  }
@@ -545,23 +687,28 @@ iframe{
 		}
 
 		.meta-info td{
-			background: #f3f3f3;
+			background: var(  --nb-learn--off-white);
 			color: var( --nb-learn--gray );
 		}
 
-		.course input[type="submit"]{
+		.asmt-editor{
+			margin-bottom: 10px; 
+		}
+
+		.asmt-editor input[type="submit"]{
 			background: var( --nb-learn--magenta); 
 			color: var( --nb-learn--white);
 			border: none;
+			border-radius: 4px;
 			display: inline-block;
-			margin-top: 10px;
+			margin: 10px 10px 10px 0;
 			padding: 10px 16px;
 			transition: background 0.6s ease-out 0s;
 			
 			
 		}
-		.course input[type="submit"]:hover{
-			background: #B56A83;
+		.asmt-editor input[type="submit"]:hover{
+			background: var( --nb-learn--pink);
 		}
 
 		.asmt_status_box{
@@ -612,9 +759,13 @@ iframe{
 		#attachments input[ type="submit" ].delete-attachment,
 		#attachments input[ type="button" ].reject_attach_delete{
 			font-size: 12px;
+			border: 0; 
 			border-radius: 16px;
 			margin: 0;
+			padding: 0 9px; 
+			color: var( --nb-learn--white);
 			text-transform: lowercase;
+			transition: background 0.6s ease-out 0s;
 			
 		}
 
@@ -738,6 +889,13 @@ iframe{
 		/* || In-Page menues 
 			(These are not exclusive to the LEARNDASH-NBCS plugin. Move elsewhere. )
 		*/
+
+		ul#in-page-menu,
+		ul#in-page-menu > li.page-menu-item{
+			margin: 0;
+			padding: 0;
+
+		}
 	
 		ul#in-page-menu{
 			border-top: 1px solid #F2F1F5;
@@ -745,17 +903,13 @@ iframe{
 			flex-wrap: nowrap;
 			justify-content: space-between;
 			gap: 10px; 
-			margin: 0;
-			padding: 0;
+			margin: 10px 0; 
 		}
 		
 		ul#in-page-menu li.page-menu-item{
-		
 			display: flex; 
 			flex: 1 1 0;
-			margin: 0;
 			align-items: stretch;
-		
 		}
 		
 		ul#in-page-menu li a{
@@ -881,7 +1035,7 @@ iframe{
 		
 		.preview-cta,
 		.register-cta{
-			margin: 20px 0;
+			margin: 5px;
 			padding: 20px 0;
 		}
 		
@@ -891,6 +1045,8 @@ iframe{
 			color: var( --nb-learn--white);
 			font-weight: bold;
 			padding-left: 20px;
+			margin: 0; 
+			line-height: 52px;
 		}
 		
 		.preview-cta{
@@ -1401,11 +1557,12 @@ iframe{
 			font-size: 20px !important; 
 		}
 		
-		.rcp_form .rcp_user_fieldset label span{
+		.rcp_form .rcp_user_fieldset label span,
+		.rcp_form fieldset label span{
 			display: block;	
-			font-size: .5em;
+			font-size: .7em;
 			font-weight: normal;
-			line-height: .8em;	
+			line-height: .9em;	
 		}
 		
 		
@@ -1459,6 +1616,12 @@ iframe{
 			background-color: var( --nb-learn--yellow );	
 		}
 		
+
+		.rcp_form input.rcp-button#rcp_lostpassword_submit,
+		.rcp_form input.rcp-button#rcp_password_submit{
+			float: none;
+			margin: 0 0 20px;
+		}
 		
 		.wp-site-blocks .rcp_form p label {
 			line-height: 1.2em !important;
@@ -1506,9 +1669,8 @@ iframe{
 			max-width: 600px;	
 		}
 
-
-
 		/* ! General, Forms */ 
+
 
 	/* ! RESTRICTED CONTENT PRO */ 
 
@@ -1923,8 +2085,8 @@ button.stripe-button-el:focus span{
 
 .nb-table.profile-table td input:disabled,
 input[type="text"]:read-only{
-	background-color: #F5F9EF;
-	color: #8F9388;
+	background-color: var( --nb-learn--light-gray ) !important;
+	color: var( --nb-learn--gray );
 }
 
 .entry-content #message{
@@ -1953,7 +2115,7 @@ input[type="text"]:read-only{
 */
 
 .feedback {
-    background: #91c2a8 none repeat scroll 0 0;
+    background:#91c2a8 none repeat scroll 0 0;
     border-radius: 80px;
     box-shadow: -1px 3px 5px #565656;
     height: auto;
@@ -2024,6 +2186,10 @@ input[type="text"]:read-only{
 		margin-bottom: 40px;
 	}
 
+
+	.kad-standard-logo{
+		height: 50px;
+	}
 }
 
 
