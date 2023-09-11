@@ -168,38 +168,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					 
 					//NBCS Hack - Load Assignment editor: 
+					
+					if( !nb_role_is( 'reader' ) && !nb_role_is( 'inactive' ) ):
+
+						$grades = new Doula_Course\App\Clss\Grades\Grades( );
+						$grades->build( $current_user->ID  ); 
+
+						//This is the logic that allows for a grade to be submitted for a specific assignment, but not have "assignment" CPT attached to the grades, so that a trainer may override a required assignment submission. 
+						if( !empty( $grades->get_grade_by_id( $post->ID ) ) && empty( $grades->assignment_exists( $post->ID ) ) ):
 							
-					$grades = new Doula_Course\App\Clss\Grades\Grades( );
-					$grades->build( $current_user->ID  ); 
+							$asmt_status_string = $grades->get_grade_status(  $post->ID  );
 
-					//This is the logic that allows for a grade to be submitted for a specific assignment, but not have "assignment" CPT attached to the grades, so that a trainer may override a required assignment submission. 
-					if( !empty( $grades->get_grade_by_id( $post->ID ) ) && empty( $grades->assignment_exists( $post->ID ) ) ):
-						
-						$asmt_status_string = $grades->get_grade_status(  $post->ID  );
+							echo "<hr>
+							<div class='asmt_submitted'> 
+								<h3>Assignment Submitted</h3>
+								<p><em>This assignment is already marked as <strong>{$asmt_status_string}</strong>, but was submitted some other way, probably via email.</em></p>
+							</div>";
+						else: ?>
 
+							<p><a class="button" href="#asmt-editor">Jump to Assignment Editor &darr;</a></p>
+							<hr style="clear: both;">
+							<div class="asmt-editor"> 
+								<h2 id="asmt-editor">Assignment Editor</h2>
+								<?php // We may want to insert comments on the assignment here? Toggle Visibility. ?>
+
+								<?php  include_once( DOULA_COURSE_PATH.'app/tmpl/assignment-editor.php' ); ?>
+								
+							</div><!-- end asmt-editor --> 		
+
+							<?php 
+							// Restore original Post Data //
+							wp_reset_postdata();
+
+						endif;
+					else:
+					
 						echo "<hr>
-						<div class='asmt_submitted'> 
-							<h3>Assignment Submitted</h3>
-							<p><em>This assignment is already marked as <strong>{$asmt_status_string}</strong>, but was submitted some other way, probably via email.</em></p>
-						</div>";
-					else: ?>
+							<div class='asmt_submitted'> 
+								<p><em>(Assignment editor is unavailable in reader-only mode.)</em></p>
+							</div>";
 
-						<p><a class="button" href="#asmt-editor">Jump to Assignment Editor &darr;</a></p>
-						<hr style="clear: both;">
-						<div class="asmt-editor"> 
-							<h2 id="asmt-editor">Assignment Editor</h2>
-							<?php // We may want to insert comments on the assignment here? Toggle Visibility. ?>
-
-							<?php  include_once( DOULA_COURSE_PATH.'app/tmpl/assignment-editor.php' ); ?>
-							
-						</div><!-- end asmt-editor --> 		
-
-						<?php 
-						// Restore original Post Data //
-						 wp_reset_postdata();
-
-					endif;
-				
+					endif; //end if not reader or inactive user. 
+						
 					//END NBCS Hack - Assignment Editor; 	
 					
 					

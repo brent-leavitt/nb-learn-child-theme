@@ -1,14 +1,14 @@
 /*
 Theme Name:     NB Learn
 Theme URI:      https://learn.trainingdoulas.com/
-Description:    NB Learn is an extension of the Kadence theme by Kadence WP
+Description:    NB Learn is an extension of the Pinnacle theme by Kadence WP
 Author:         Brent Leavitt
 Author URI:     https://www.trainingdoulas.com/
-Template:       kadence
+Template:       pinnacle
 Version:        0.1.0
 */
 
-@import url("../kadence/style.css");
+@import url("../pinnacle/style.css");
 
 /* 
 	Styles Outline:
@@ -695,7 +695,8 @@ iframe{
 			margin-bottom: 10px; 
 		}
 
-		.asmt-editor input[type="submit"]{
+		.asmt-editor input[type="submit"],
+		.learndash-resume-button input[type="submit"]{
 			background: var( --nb-learn--magenta); 
 			color: var( --nb-learn--white);
 			border: none;
@@ -707,7 +708,9 @@ iframe{
 			
 			
 		}
-		.asmt-editor input[type="submit"]:hover{
+		
+		.asmt-editor input[type="submit"]:hover,
+		.learndash-resume-button input[type="submit"]:hover{
 			background: var( --nb-learn--pink);
 		}
 
@@ -1603,7 +1606,7 @@ iframe{
 		  border-radius: 4px;
 		  border: 0; 
 		  padding: 14px 22px;
-		  margin-top: -49px;
+		  margin-bottom: 20px;
 		  float: right;
 		}
 		
@@ -1667,6 +1670,19 @@ iframe{
 		
 		.rcp_form .rcp_user_fieldset > p > input{
 			max-width: 600px;	
+		}
+		
+		
+		.rcp_registration_total_details tr.rcp-renewal-date{
+			margin-left: 0; 
+		}
+		
+		.rcp_registration_total_details tr.rcp-renewal-date td:first-child{
+			font-weight: bold;			
+		}
+		
+		.rcp_form fieldset.rcp_gateways_fieldset legend{
+			margin-top: 30px;			
 		}
 
 		/* ! General, Forms */ 
@@ -1945,18 +1961,38 @@ button.stripe-button-el:focus span{
   }
 }
 
+
+	
 @media screen and (min-width: 481px){
- .home .page-header .col-md-12{
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 548px;
- }
+	 .home .page-header .col-md-12{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 548px;
+	 }
+	 
+	 .ms-membership-form-wrapper{
+		margin: 0 25%;
+	}
  
- .ms-membership-form-wrapper{
-	margin: 0 25%;
 }
- 
-}
+
+@media screen and (max-width: 549px){
+	
+	body.register #content .main.col-lg-9.col-md-8{
+		padding-left: 0; 
+		padding-right: 0;
+	}
+	
+	body.register #content .main .pageclass{
+		padding: 40px 0 !important; 
+		
+	}
+	
+	.register form.rcp_form > div.rcp_registration_total{
+		overflow:scroll;
+	}
+}	
+
 
 @media screen and (max-width: 480px) {
   #home-lower-promo iframe{

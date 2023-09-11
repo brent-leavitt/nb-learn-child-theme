@@ -13,7 +13,7 @@
 	<?php if ( is_user_logged_in() || ( in_array( $post_slug, $no_show_array ) ) ):?>
 			
 	<?php else: ?>
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/nb_heart.png" alt="New Beginnings heart logo"	/>
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo/nb_heart.png" alt="New Beginnings heart logo"	/>
 		<h2>Your Next Step</h2>
 		<p>Prepare for the birthing experience <br> with New Beginnings Doula <br>Training &amp; Childbirth Library!</p>
 		<div class="start_cta">
